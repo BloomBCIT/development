@@ -1,0 +1,298 @@
+body {
+    width:100%;
+    height:100%;
+    /*background-image: url(img/Bloom_bg.png);*/
+}
+
+#allUsers{
+    position: absolute;
+    margin-left:10px;
+    width:30%;
+    background-color: white;
+    height:80%;
+    text-align: center;
+    margin: 0;
+    
+}
+
+#allUsersP{
+    background-color: #fdf3f0;
+}
+.usersP{
+    background-color: #fdf3f0;
+    font-size: 1em;
+}
+
+
+.xbutton{
+    position:absolute;
+}
+
+.joinChat, .send{
+    position:absolute;
+    background-color: #ed7a5d;
+    padding:6px;
+    -moz-border-radius:10px;
+	-webkit-border-radius: 10px;
+	border-radius:10px;
+    border-color: #ed7a5d;
+    font-size: 1em;
+    color: white;
+}
+
+
+.chatDiv{
+    position:relative;
+    width:65%;
+    height:80%;
+    text-align: center;
+    margin: 0;
+    float:right;
+    overflow: scroll;
+    
+}
+
+#configBox, #controls{
+    height:15%;
+    width:100%;
+    background-color: white;
+    text-align: center;
+    margin: auto;
+}
+
+.input0, .input1{
+    padding:3%;
+    border-color: white;
+    width:60%;
+
+}
+
+#chatDisplay{
+    width:80%;
+    background-color: white;
+    float: right;
+    height: 60%;
+    
+}
+
+.wholeChat{
+    background-color: #f8f8f8;
+    position:absolute;
+    height: 50%;
+    width:50%;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    margin: auto; 
+     -moz-border-radius: 1%;
+	-webkit-border-radius: 1%;
+	border-radius: 1%;
+    overflow: scroll;
+}
+
+.topBar{
+    background-color: #ed7a5d;
+    top:0;
+    position: absolute;
+    height:15%;
+    width:100%;
+    text-align: center;
+}
+
+
+.chatBut{
+    font-size: 1em;
+    color:antiquewhite;
+    position: absolute;
+    left:0;
+    right:0;
+    bottom:0;
+    height:50px;
+    width:50px;
+    margin: auto;
+    background-color: #ed7a5d;
+    border-color: #ed7a5d;
+    -moz-border-radius: 50px;
+	-webkit-border-radius: 50px;
+	border-radius: 50px;
+    text-align: center;
+    box-shadow: 0 0 10px #ffffff;     
+    
+}
+
+.chatBut:hover{
+    height:55px;
+    width:55px; 
+    background-color: #ff997f;
+    border-color:  #ff997f;
+}
+
+.wrap{
+    background-image: url(../src/img/Bloom_bg1.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.wrap {
+    position:absolute;
+    width:100%;
+    height:100%;
+    margin:auto;
+    align-content: center;
+}
+
+.bloomDiv{
+    text-align: center;
+    position: absolute;
+
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+  
+    height:150px;
+    margin: auto;
+    color:white;
+
+
+}
+.bloom{
+    font-size: 6.5em;
+    margin:auto;
+    color: #ffffff;
+    text-decoration: none;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    transition: all 0.5s;
+    -webkit-animation: neon1 1.5s ease-in-out infinite alternate;
+    -moz-animation: neon1 1.5s ease-in-out infinite alternate;
+    animation: neon1 1.5s ease-in-out infinite alternate;
+   
+    /*glow effect is from code pen https://codepen.io/FelixRilling/pen/qzfoc?limit=all&page=1&q=neon */
+}
+
+
+.kaylie{
+    position:absolute;
+    text-align: center;
+    top:0;
+    bottom:0;
+    height:300px;
+    width:300px;
+    margin: auto;
+  
+}
+
+
+.sehee{
+    position:absolute;
+    text-align: center;
+    top:0;
+    right:0;
+    bottom:0;
+    height:300px;
+    width:300px;
+    margin: auto;
+}
+
+.kaylieCircle {
+    text-align: center;
+    margin: auto;
+	width: 200px;
+	height: 200px;
+    background-image: url(img/moa.png);
+	-moz-border-radius: 100px;
+	-webkit-border-radius: 100px;
+	border-radius: 100px;
+    box-shadow: 0 0 25px #cfd8c3;
+
+}
+
+
+.seheeCircle {
+    text-align: center;
+    margin: auto;
+    width: 200px;
+    height: 200px;
+    background-image: url(img/sehee0.png);
+    -moz-border-radius: 100px;
+    -webkit-border-radius: 100px;
+    border-radius: 100px;
+    box-shadow: 0 0 25px #cfd8c3;
+
+
+}
+
+
+
+.name {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    line-height: 170px;
+    color: #fff;
+    visibility: hidden;
+    opacity: 0;
+    font-size: 1.2em;
+    font-family: Gill Sans;
+}
+
+.kaylieCircle:hover .name {
+    visibility: visible;
+    opacity: 1;
+}
+
+.seheeCircle:hover{
+    background-image: url(img/sehee1.png);
+}
+
+.seheeCircle:hover .name{
+    visibility: visible;
+    opacity: 1;
+}
+
+
+
+.kaylieP, .seheeP{
+    font-family: monospace;
+    margin:0;
+    color: black;
+    font-size: 1.7em;
+    
+}
+
+
+
+
+/* neon effect keyframes start*/
+
+@-webkit-keyframes neon1 {
+  from {
+    text-shadow: 0 0 10px #c51dd3, 0 0 20px #33c8ff, 0 0 30px #33c8ff, 0 0 40px #228DFF, 0 0 70px #228DFF, 0 0 80px #228DFF
+  }
+  to {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ca2fde, 0 0 35px #ca2fde, 0 0 40px #ca2fde, 0 0 50px #228DFF, 0 0 75px #228DFF;
+  }
+}
+
+@-moz-keyframes neon1 {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #228DFF, 0 0 70px #228DFF, 0 0 80px #228DFF, 0 0 100px #228DFF, 0 0 150px #228DFF;
+  }
+  to {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #228DFF, 0 0 35px #228DFF, 0 0 40px #228DFF, 0 0 50px #228DFF, 0 0 75px #228DFF;
+  }
+}
+
+@keyframes neon2 {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #228DFF, 0 0 70px #228DFF, 0 0 80px #228DFF, 0 0 100px #228DFF, 0 0 150px #228DFF;
+  }
+  to {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #228DFF, 0 0 35px #228DFF, 0 0 40px #228DFF, 0 0 50px #228DFF, 0 0 75px #228DFF;
+  }
+}
+/* neon effect keyframes finish*/
