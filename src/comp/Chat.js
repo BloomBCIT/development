@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import mySocket from 'socket.io-client';
 import '../App.css';
-import * as Scroll from 'react-scroll';
+
 
 
 class Chat extends Component {
