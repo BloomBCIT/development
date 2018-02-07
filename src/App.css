@@ -12,11 +12,15 @@ body {
     height:80%;
     text-align: center;
     margin: 0;
+    overflow:auto;
+    bottom:0;
     
 }
 
+
 #allUsersP{
     background-color: #fdf3f0;
+    
 }
 .usersP{
     background-color: #fdf3f0;
@@ -29,26 +33,31 @@ body {
 }
 
 .joinChat, .send{
-    position:absolute;
     background-color: #ed7a5d;
-    padding:6px;
     -moz-border-radius:10px;
 	-webkit-border-radius: 10px;
 	border-radius:10px;
     border-color: #ed7a5d;
-    font-size: 1em;
+    font-size: 0.7em;
     color: white;
+    width:30%;
+    height: 90%;
+    margin-top: 1%;
 }
 
+#chatBox{
+    height: 100%;
+}
 
 .chatDiv{
-    position:relative;
+    position:absolute;
     width:65%;
     height:80%;
     text-align: center;
     margin: 0;
     float:right;
-    overflow: scroll;
+    bottom: 0;
+    right:0;
     
 }
 
@@ -57,21 +66,28 @@ body {
     width:100%;
     background-color: white;
     text-align: center;
-    margin: auto;
+    left:0;
+    position: absolute;
+    bottom:0;
 }
 
 .input0, .input1{
-    padding:3%;
     border-color: white;
     width:60%;
+    height: 80%;
+    float: left;
+    position: relative;
 
 }
 
 #chatDisplay{
-    width:80%;
+    width:100%;
     background-color: white;
     float: right;
-    height: 60%;
+    height: 85%;
+    position: relative;
+    overflow: auto;
+    margin-right: 5%;
     
 }
 
@@ -98,6 +114,7 @@ body {
     height:15%;
     width:100%;
     text-align: center;
+    z-index: 1;
 }
 
 
@@ -215,7 +232,7 @@ body {
     margin: auto;
     width: 200px;
     height: 200px;
-    background-image: url(img/sehee0.png);
+    background-image: url(img/sehee.png);
     -moz-border-radius: 100px;
     -webkit-border-radius: 100px;
     border-radius: 100px;
@@ -245,9 +262,6 @@ body {
     opacity: 1;
 }
 
-.seheeCircle:hover{
-    background-image: url(img/sehee1.png);
-}
 
 .seheeCircle:hover .name{
     visibility: visible;

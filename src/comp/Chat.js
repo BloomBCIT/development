@@ -36,7 +36,7 @@ class Chat extends Component {
             mode:1
         })
         
-        this.socket = mySocket("https://bloombcit-socket.herokuapp.com/");
+        this.socket = mySocket("http://localhost:10001");
         this.socket.emit("username", this.state.username);
        
         this.socket.on("usersjoined", (data)=>{
@@ -101,9 +101,9 @@ class Chat extends Component {
                   });
                   config = (
                     <div id="chatBox">
-                      <div id="chatDisplay">{allChats}
+                      <div id=  "chatDisplay">{allChats}
                       </div> 
-                      <div id ="controls">
+                         <div id ="controls">
                         <input className="input1" onChange={this.handleMyMsg} type="text" placeholder="type your message" />
                         <button className="send"  onClick={this.sendChat}>Send</button>
                       </div>
@@ -128,7 +128,7 @@ class Chat extends Component {
       <div className="wholeChat">
          <button className="xbutton" onClick={this.props.closePopup}>X</button>
         <div className="topBar">
-            <p>Bloom Live Chat</p>
+            <p className="bloomP">Bloom Live Chat</p>
         </div>
         <br/><br/><br/>
         

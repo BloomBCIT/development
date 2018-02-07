@@ -18,6 +18,7 @@ class Landing extends Component {
     }
     
     nextPage(){
+        
         var page = "Chat";
         this.props.changePage(page);
     }
