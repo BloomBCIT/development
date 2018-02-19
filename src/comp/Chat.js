@@ -26,7 +26,8 @@ class Chat extends Component {
         
     }
     componentDidMount(){
-       // this.socket = mySocket("http://localhost:10001");    
+       // this.socket = mySocket("http://localhost:10001");  
+       //hi  
         
     }
     
