@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Landing from './comp/Landing';
 import Chat from './comp/Chat';
+import Sticker from './comp/Sticker';
 
 class App extends Component {
     constructor(props){
@@ -29,6 +30,9 @@ class App extends Component {
       
       }else if(this.state.page == "Chat"){
           comp = <Chat changePage = {this.changePage} />
+      
+      }else if(this.state.page == "Sticker"){
+          comp = <Sticker changePage = {this.changePage} />
       
       }
       

@@ -3,13 +3,15 @@ import '../App.css';
 import {Animated} from "react-animated-css";
 import logo from "../img/logo2.png";
 import Chat from '../comp/Chat';
+import Sticker from '../comp/Sticker';
 
 class Landing extends Component {
     constructor(props){
         super(props);
         
         this.state={
-            clicked:false
+            clicked:false,
+            StickerClicked:false
 
         };
         
@@ -26,6 +28,12 @@ class Landing extends Component {
     showingChat(){
         this.setState({
             clicked: !this.state.clicked
+    });
+    }
+    
+    showingSticker(){
+        this.setState({
+            StickerClicked: !this.state.StickerClicked
     });
     }
     
@@ -78,7 +86,17 @@ class Landing extends Component {
                                         : null
                             }
                             
-                             <button className="chatBut" onClick={this.showingChat.bind(this)}>Chat</button>  
+                             <button className="chatBut" onClick={this.showingChat.bind(this)}>Chat</button>
+                             
+                        {this.state.StickerClicked ?
+                            <Sticker   
+                                    closePopup={this.showingSticker.bind(this)}
+                                        />
+                                        : null
+                            }
+                            
+                             <button className="stickerBut" onClick={this.showingSticker.bind(this)}>Sticker</button>  
+   
    
         
                 

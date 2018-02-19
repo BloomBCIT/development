@@ -105,6 +105,7 @@ body {
 	-webkit-border-radius: 1%;
 	border-radius: 1%;
     overflow: scroll;
+    z-index: 99;
 }
 
 .topBar{
@@ -122,11 +123,11 @@ body {
     font-size: 1em;
     color:antiquewhite;
     position: absolute;
-    left:0;
-    right:0;
     bottom:0;
-    height:50px;
-    width:50px;
+    left:30%;
+    top:0;
+    height:60px;
+    width:60px;
     margin: auto;
     background-color: #ed7a5d;
     border-color: #ed7a5d;
@@ -139,11 +140,40 @@ body {
 }
 
 .chatBut:hover{
-    height:55px;
-    width:55px; 
+    height:65px;
+    width:65px;
     background-color: #ff997f;
     border-color:  #ff997f;
 }
+
+
+.stickerBut{
+    font-size: 1em;
+    color:antiquewhite;
+    position: absolute;
+    bottom:0;
+    right:30%;
+    top:0;
+    height:60px;
+    width:60px;
+    margin: auto;
+    background-color: #ed7a5d;
+    border-color: #ed7a5d;
+    -moz-border-radius: 50px;
+	-webkit-border-radius: 50px;
+	border-radius: 50px;
+    text-align: center;
+    box-shadow: 0 0 10px #ffffff;     
+    
+}
+
+.stickerBut:hover{
+    height:65px;
+    width:65px; 
+    background-color: #ff997f;
+    border-color:  #ff997f;
+}
+
 
 .wrap{
     background-image: url(../src/img/Bloom_bg1.png);
@@ -310,3 +340,39 @@ body {
   }
 }
 /* neon effect keyframes finish*/
+
+
+
+.App {
+  text-align: center;
+}
+
+#display {
+    position:fixed;
+    background-color:#FADD;
+    left:0;
+    top:0;
+    bottom:0;
+    right:0;
+    width:80vw;
+    height:80vh;
+    cursor:none;
+    margin: auto;
+}
+
+#controls2 {
+    position:fixed;
+    bottom:0;
+    right:0;
+    width:30vw;
+    height:50px;
+    background-color:#DADD;
+}
+
+#myImg {
+    position:absolute;
+}
+
+.allImgs {
+    position:absolute;
+}
