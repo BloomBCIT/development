@@ -1,21 +1,18 @@
 import React, { Component } from 'react';
-import mySocket from 'socket.io-client';
-import '../App.css';
-import Room from './Room.js'
-
-
+import './App.css';
+import mySocket from "socket.io-client";
+import Room from "./Room";
 
 class Sticker extends Component {
-  
-    
-      constructor(props){
+    constructor(props){
         super(props);
         this.state = {
-            myImg:require("../img/st1.png"),
-            myImg2:require("../img/st2.png"),
+            myImg:require("./img/st1.png"),
+            myImg2:require("./img/st2.png"),
             allusers:[],
             myId:null,
             showDisplay:false,
+            stickers:[]
             
         }
         
@@ -26,7 +23,8 @@ class Sticker extends Component {
         
     componentDidMount(){
         //console.log(this.refs.thedisplay.id);
-        this.socket = mySocket("https://bloombcit-socket.herokuapp.com/");
+        this.socket = mySocket("https://bloombcit-sticker.herokuapp.com/");
+        
         this.socket.on("createimage", (data)=>{
             this.setState({
                 allusers:data
@@ -53,16 +51,34 @@ class Sticker extends Component {
                 x:ev.pageX,
                 y:ev.pageY,
                 id:this.state.myId,
-                img:this.refs["u"+this.state.myId].src
+                src:this.refs["u"+this.state.myId].src
             });
         });
+            
+            this.refs.thedisplay.addEventListener("click", (ev)=>{
+                this.socket.emit("sticker", {
+                    x:ev.pageX,
+                    y:ev.pageY,
+                    //id:this.state.myId,
+                    src:this.refs["u"+this.state.myId].src
+            });
+                })
+                
+            
        }); 
+
+        this.socket.on("newsticker", (data)=>{
+            this.setState({
+                stickers:data
+            })
+            
+        })
         
         this.socket.on("usermove", (data)=>{
             console.log("user has moved");
             this.refs["u"+data.id].style.top = data.y+"px";
             this.refs["u"+data.id].style.left = data.x+"px";
-            this.refs["u"+data.id].src = data.img;
+            this.refs["u"+data.id].src = data.src;
         })
         /*
         this.refs.thedisplay.addEventListener("mousemove", (ev)=>{
@@ -103,26 +119,41 @@ class Sticker extends Component {
     render() {
         var auImgs = this.state.allusers.map((obj,i)=>{
             return (
-                <img ref={"u"+obj} key={i} height={50} className="allImgs" src={this.state.myImg} />
+                <img ref={"u"+obj}className="allImgs" src={this.state.myImg} height={50} key={i} />
             )
+        });
+        
+        var stickers = this.state.stickers.map((obj,i)=>{
+            
+            var mstyle = {left:obj.x, top:obj.y}
+            
+            return(
+                <img style={mstyle} src={obj.src} key={i} height={50} className="allImgs"/>
+            
+            )
+            
         })
+        
         
         var comp = null;
         
         if(this.state.showDisplay ===false){
-            comp = <Room  handleDisplay={this.handleDisplay}/>
+            comp = <Room 
+                handleDisplay={this.handleDisplay}
+            />;
             
         }else{
             comp = (
-            <div>
-             <div ref="thedisplay" id="display">
-                    {auImgs}
-                </div>
-                    <div id="controls2">
-                        {this.state.myId}
-                        <img src={this.state.myImg} height={50} onClick={this.handleImage} />
-                        <img src={this.state.myImg2} height={50} onClick={this.handleImage} />
+                <div>
+                    <div ref="thedisplay" id="display">
+                        {auImgs}
+                        {stickers}
                     </div>
+                        <div id="controls">
+                            {this.state.myId}
+                            <img src={this.state.myImg} height={50} onClick={this.handleImage} />
+                            <img src={this.state.myImg2} height={50} onClick={this.handleImage} />
+                        </div>
             </div>
         );
         
@@ -138,4 +169,5 @@ class Sticker extends Component {
         );
     }
 }
+
 export default Sticker;
