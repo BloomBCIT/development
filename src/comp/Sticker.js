@@ -145,11 +145,11 @@ class Sticker extends Component {
         }else{
             comp = (
                 <div>
-                    <div ref="thedisplay" id="display">
+                    <div ref="thedisplay" id="display2">
                         {auImgs}
                         {stickers}
                     </div>
-                        <div id="controls">
+                        <div id="controls3">
                             {this.state.myId}
                             <img src={this.state.myImg} height={50} onClick={this.handleImage} />
                             <img src={this.state.myImg2} height={50} onClick={this.handleImage} />
