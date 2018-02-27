@@ -427,6 +427,10 @@ body {
 
 .roomBut1, .roomBut2{
     z-index: 99;
+    position:absolute;
+    bottom:0;
+    right:30%;
+    top:0;
 }
 
 
