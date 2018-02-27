@@ -331,7 +331,13 @@ body {
     opacity: 1;
 }
 
-
+.kaylieP, .seheeP{
+    font-family: monospace;
+    margin:0;
+    color: black;
+    font-size: 1.7em;
+}
+    
 
 /* neon effect keyframes start*/
 
