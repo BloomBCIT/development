@@ -54,6 +54,8 @@ class Landing extends Component {
                     <img src={logo} alt="Logo" />
                 </div>
         
+        
+        
                 <div className="kaylie">
                     <Animated animationIn="swing" animationOut="swing" isVisible={true}>
                     
@@ -67,6 +69,19 @@ class Landing extends Component {
                    
                 </div>
 
+        
+                <div className="leo">
+                    <Animated animationIn="swing" animationOut="swing" isVisible={true}>
+                   
+                    
+                        <div className="leoCircle">
+                            <p className="name">Leo Lou</p>
+                        </div>
+                    </Animated>
+                
+                   
+                </div>    
+        
                 <div className="sehee">
                     <Animated animationIn="swing" animationOut="swing" isVisible={true}>
                    

@@ -246,6 +246,15 @@ body {
     margin: auto;
 }
 
+.leo{
+    position:absolute;
+    text-align: center;
+    top:0;
+    height:300px;
+    width:300px;
+    margin: auto;
+}
+
 .kaylieCircle {
     text-align: center;
     margin: auto;
@@ -275,6 +284,20 @@ body {
 }
 
 
+.leoCircle {
+    text-align: center;
+    margin: auto;
+    width: 200px;
+    height: 200px;
+    background-image: url(img/leo.jpg);
+    -moz-border-radius: 100px;
+    -webkit-border-radius: 100px;
+    border-radius: 100px;
+    box-shadow: 0 0 25px #cfd8c3;
+
+
+}
+
 
 .name {
     position: absolute;
@@ -301,16 +324,10 @@ body {
     opacity: 1;
 }
 
-
-
-.kaylieP, .seheeP{
-    font-family: monospace;
-    margin:0;
-    color: black;
-    font-size: 1.7em;
-    
+.leoCircle:hover .name{
+    visibility: visible;
+    opacity: 1;
 }
-
 
 
 
