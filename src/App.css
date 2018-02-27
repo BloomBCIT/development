@@ -411,6 +411,9 @@ body {
     background-color:white;
     left:0;
     top:0;
+    bottom:0;
+    right:0;
+    margin:auto;
     width:80vw;
     height:80vh;
     cursor:none;
