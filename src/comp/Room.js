@@ -21,8 +21,8 @@ class Room extends Component {
       
         return (
             <div>
-                <button onClick={this.props.handleDisplay.bind(this, "room1")}>Room 1 </button>
-                <button onClick={this.props.handleDisplay.bind(this,"room2")}>Room 2 </button>
+                <button className="roomBut1" onClick={this.props.handleDisplay.bind(this, "room1")}>Room 1 </button>
+                <button className="roomBut2" onClick={this.props.handleDisplay.bind(this,"room2")}>Room 2 </button>
             </div>
         )
     }

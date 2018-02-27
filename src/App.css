@@ -419,5 +419,9 @@ body {
     background-color:#DADD;
 }
 
+.roomBut1, .roomBut2{
+    z-index: 99;
+}
+
 
 
