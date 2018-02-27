@@ -250,6 +250,8 @@ body {
     position:absolute;
     text-align: center;
     top:0;
+    left:0;
+    right:0;
     height:300px;
     width:300px;
     margin: auto;
