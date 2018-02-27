@@ -20,7 +20,7 @@ class Room extends Component {
     render() {
       
         return (
-            <div>
+            <div className="butDiv">
                 <button className="roomBut1" onClick={this.props.handleDisplay.bind(this, "room1")}>Room 1 </button>
                 <button className="roomBut2" onClick={this.props.handleDisplay.bind(this,"room2")}>Room 2 </button>
             </div>

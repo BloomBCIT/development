@@ -425,13 +425,40 @@ body {
     background-color:#DADD;
 }
 
-.roomBut1, .roomBut2{
-    z-index: 99;
-    position:absolute;
-    bottom:0;
-    right:30%;
+.butDiv{
+    width:8%;
+    height:10%;
+    right:28%;
     top:0;
+    bottom:10%;
+    position:absolute;
+    margin: auto;
+    
+}
+.roomBut1{
+    z-index: 99;
+    position:relative;
+    height:30px;
+    width:50px;
+    margin: auto;
+    float: left;
+    background-color: #ed7a5d;
+    border-color: #ed7a5d;
+    box-shadow: 0 0 10px #ffffff; 
+    color:antiquewhite;
+    
 }
 
 
-
+.roomBut2{
+    z-index: 99;
+    position:relative;
+    height:30px;
+    width:50px;
+    margin: auto;
+    float: right;
+    background-color: #ed7a5d;
+    border-color: #ed7a5d;
+    box-shadow: 0 0 10px #ffffff; 
+    color:antiquewhite;
+}
