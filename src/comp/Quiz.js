@@ -15,7 +15,7 @@ class Quiz extends Component {
     }
     
     componentDidMount(){
-        this.socket = mySocket("http://localhost:10000");
+        this.socket = mySocket("https://bloomquiz.herokuapp.com/");
         
         
         this.socket.on("newq", (data)=>{
