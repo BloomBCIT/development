@@ -178,6 +178,35 @@ body {
 }
 
 
+.quizBut{
+    font-size: 1em;
+    color:antiquewhite;
+    position: absolute;
+    bottom:30%;
+    left:0;
+    right:0;
+    top:0;
+    height:60px;
+    width:60px;
+    margin: auto;
+    background-color: #ed7a5d;
+    border-color: #ed7a5d;
+    -moz-border-radius: 50px;
+	-webkit-border-radius: 50px;
+	border-radius: 50px;
+    text-align: center;
+    box-shadow: 0 0 10px #ffffff;      
+}
+
+.quizBut:hover{
+    height:65px;
+    width:65px; 
+    background-color: #ff997f;
+    border-color:  #ff997f;
+}
+
+
+
 .wrap{
     background-image: url(../src/img/Bloom_bg1.png);
     background-repeat: no-repeat;
@@ -464,4 +493,19 @@ body {
     border-color: #ed7a5d;
     box-shadow: 0 0 10px #ffffff; 
     color:antiquewhite;
+}
+
+
+.entireDiv{
+    position:fixed;
+    background-color:skyblue;
+    left:0;
+    top:0;
+    bottom:0;
+    right:0;
+    width:80vw;
+    height:80vh;
+    cursor:none;
+    margin: auto;
+
 }

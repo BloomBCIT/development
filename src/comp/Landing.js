@@ -4,6 +4,7 @@ import {Animated} from "react-animated-css";
 import logo from "../img/logo2.png";
 import Chat from '../comp/Chat';
 import Sticker from '../comp/Sticker';
+import Quiz from '../comp/Quiz';
 
 class Landing extends Component {
     constructor(props){
@@ -11,7 +12,8 @@ class Landing extends Component {
         
         this.state={
             clicked:false,
-            StickerClicked:false
+            StickerClicked:false,
+            quizClicked:false,
 
         };
         
@@ -34,6 +36,13 @@ class Landing extends Component {
     showingSticker(){
         this.setState({
             StickerClicked: !this.state.StickerClicked
+    });
+    }
+    
+    
+    showingQuiz(){
+        this.setState({
+            quizClicked: !this.state.quizClicked
     });
     }
     
@@ -110,7 +119,18 @@ class Landing extends Component {
                                         : null
                             }
                             
-                             <button className="stickerBut" onClick={this.showingSticker.bind(this)}>Sticker</button>  
+                             <button className="stickerBut" onClick={this.showingSticker.bind(this)}>Sticker</button>
+                             
+                             
+                            {this.state.quizClicked ?
+                            <Quiz  
+                                    closePopup={this.showingQuiz.bind(this)}
+                                        />
+                                        : null
+                            }
+                             
+                             
+                             <button className="quizBut" onClick={this.showingQuiz.bind(this)}>Start the Quiz</button>  
    
    
         
