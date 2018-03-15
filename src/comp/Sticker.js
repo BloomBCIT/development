@@ -161,8 +161,11 @@ class Sticker extends Component {
                         {auImgs}
                         {stickers}
                     </div>
+                
+                        <div id="yourId">YOUR ID: {this.state.myId}</div>
+                        
                         <div id="controls3">
-                            <div>{this.state.myId}</div>
+                            
                             <img src={this.state.myImg} height={50} onClick={this.handleImage} />
                             <img src={this.state.myImg2} height={50} onClick={this.handleImage} />
                             <img src={this.state.myImg3} height={50} onClick={this.handleImage} />

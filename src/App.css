@@ -426,6 +426,15 @@ body {
     background-color:#DADD;
 }
 
+
+#yourId{
+    position:fixed;
+    left:0;
+    right:0;
+    top:0;
+    color:white;
+}
+
 #myImg {
     position:absolute;
 }
