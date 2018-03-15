@@ -131,7 +131,7 @@ class Sticker extends Component {
     render() {
         var auImgs = this.state.allusers.map((obj,i)=>{
             return (
-                <img ref={"u"+obj}className="allImgs" src={this.state.myImg} height={50} key={i} />
+                <img ref={"u"+obj} className="allImgs" src={this.state.myImg} height={50} key={i} />
             )
         });
         
