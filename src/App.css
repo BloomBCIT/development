@@ -437,7 +437,9 @@ body {
 
 #display2 {
     position:fixed;
-    background-color:rgba(255, 255, 255, 0.79);
+    background-image: url("./img/dynamicflower.png");
+    background-repeat: no-repeat;
+    background-size: cover;
     left:0;
     top:0;
     bottom:0;
@@ -450,10 +452,18 @@ body {
 
 #controls3 {
     position:fixed;
-    bottom:0;
+    left:0;
+    width:100px;
+    height:100vh;
+    background-color:rgba(237, 122, 93, 0.63);
+}
+
+
+#controls4 {
+    position:fixed;
     right:0;
-    width:30vw;
-    height:50px;
+    width:100px;
+    height:100vh;
     background-color:rgba(237, 122, 93, 0.63);
 }
 

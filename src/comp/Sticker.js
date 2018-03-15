@@ -7,8 +7,20 @@ class Sticker extends Component {
     constructor(props){
         super(props);
         this.state = {
-            myImg:require("../img/st1.png"),
-            myImg2:require("../img/st2.png"),
+            myImg:require("../img/flower1.png"),
+            myImg2:require("../img/flower2.png"),
+            myImg3:require("../img/flower3.png"),
+            myImg4:require("../img/flower4.png"),
+            myImg5:require("../img/flower5.png"),
+            myImg6:require("../img/flower6.png"), 
+            myImg7:require("../img/flower7.png"), 
+            myImg8:require("../img/flower8.png"), 
+            myImg10:require("../img/flower9.png"), 
+            myImg11:require("../img/flavor1.png"), 
+            myImg12:require("../img/flavor2.png"), 
+            myImg13:require("../img/flavor3.png"), 
+            myImg14:require("../img/flavor4.png"), 
+            myImg15:require("../img/flavor5.png"), 
             allusers:[],
             myId:null,
             showDisplay:false,
@@ -150,9 +162,24 @@ class Sticker extends Component {
                         {stickers}
                     </div>
                         <div id="controls3">
-                            {this.state.myId}
+                            <div>{this.state.myId}</div>
                             <img src={this.state.myImg} height={50} onClick={this.handleImage} />
                             <img src={this.state.myImg2} height={50} onClick={this.handleImage} />
+                            <img src={this.state.myImg3} height={50} onClick={this.handleImage} />
+                            <img src={this.state.myImg4} height={50} onClick={this.handleImage} />
+                            <img src={this.state.myImg5} height={50} onClick={this.handleImage} />
+                            <img src={this.state.myImg6} height={50} onClick={this.handleImage} />
+                            <img src={this.state.myImg7} height={50} onClick={this.handleImage} />
+                            <img src={this.state.myImg8} height={50} onClick={this.handleImage} />
+                            <img src={this.state.myImg9} height={50} onClick={this.handleImage} />
+                        </div>
+                
+                        <div id="controls4">
+                            <img src={this.state.myImg11} height={50} onClick={this.handleImage} />
+                            <img src={this.state.myImg12} height={50} onClick={this.handleImage} />
+                            <img src={this.state.myImg13} height={50} onClick={this.handleImage} />
+                            <img src={this.state.myImg14} height={50} onClick={this.handleImage} />
+                            <img src={this.state.myImg15} height={50} onClick={this.handleImage} />
                         </div>
             </div>
         );
