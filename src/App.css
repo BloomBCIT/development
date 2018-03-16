@@ -450,11 +450,12 @@ body {
 }
 
 .butDiv{
-    width:8%;
+    width:170px;
     height:10%;
-    right:28%;
     top:0;
-    bottom:10%;
+    left:0;
+    right:0;
+    bottom:0;
     position:absolute;
     margin: auto;
     
