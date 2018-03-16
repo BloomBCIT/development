@@ -21,6 +21,7 @@ class Sticker extends Component {
             myImg13:require("../img/flavor3.png"), 
             myImg14:require("../img/flavor4.png"), 
             myImg15:require("../img/flavor5.png"), 
+            bgImgsrc:require("../img/dynamicflower.png"), 
             allusers:[],
             myId:null,
             showDisplay:false,
@@ -158,6 +159,7 @@ class Sticker extends Component {
             comp = (
                 <div>
                     <div ref="thedisplay" id="display2">
+                        <img id="bgImg" src={this.state.bgImgsrc}  height={50}/>
                         {auImgs}
                         {stickers}
                     </div>

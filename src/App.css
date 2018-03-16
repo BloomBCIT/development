@@ -419,9 +419,6 @@ body {
 
 #display2 {
     position:fixed;
-    background-image: url("./img/dynamicflower.png");
-    background-repeat: no-repeat;
-    background-size: cover;
     left:0;
     top:0;
     bottom:0;
@@ -431,6 +428,21 @@ body {
     height:100vh;
     cursor:none;
 }
+
+
+#bgImg {
+
+    position:fixed;
+    left:0;
+    top:0;
+    bottom:0;
+    right:0;
+    margin:auto;
+    width:100vw;
+    height:100vh;
+    cursor:none;
+}
+
 
 #controls3 {
     position:fixed;
