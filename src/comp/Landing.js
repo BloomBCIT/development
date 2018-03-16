@@ -64,45 +64,51 @@ class Landing extends Component {
                 </div>
         
         
-        
-                <div className="kaylie">
-                    <Animated animationIn="swing" animationOut="swing" isVisible={true}>
-                    
-                    
-                        <div className="kaylieCircle">
-                            <p className="name">KAYLIE SON</p>
+                <div className="teamMembers">
+                    <div className="kaylie">
+                        <Animated animationIn="swing" animationOut="swing" isVisible={true}>
 
-                        </div>
-                    </Animated>
-                    
+
+                            <div className="kaylieCircle">
+                                <p className="name">KAYLIE SON</p>
+
+                            </div>
+                        </Animated>
+
+
+                    </div>
+
+
+                    <div className="leo">
+                        <Animated animationIn="swing" animationOut="swing" isVisible={true}>
+
+
+                            <div className="leoCircle">
+                                <p className="name">LEO LOU</p>
+                            </div>
+                        </Animated>
+
+
+                    </div>    
+
+                    <div className="sehee">
+                        <Animated animationIn="swing" animationOut="swing" isVisible={true}>
+
+
+                            <div className="seheeCircle">
+                                <p className="name">SEHEE AHN</p>
+                            </div>
+                        </Animated>
+
+
+                    </div>
                    
                 </div>
-
         
-                <div className="leo">
-                    <Animated animationIn="swing" animationOut="swing" isVisible={true}>
-                   
-                    
-                        <div className="leoCircle">
-                            <p className="name">Leo Lou</p>
-                        </div>
-                    </Animated>
-                
-                   
-                </div>    
         
-                <div className="sehee">
-                    <Animated animationIn="swing" animationOut="swing" isVisible={true}>
-                   
-                    
-                        <div className="seheeCircle">
-                            <p className="name">SEHEE AHN</p>
-                        </div>
-                    </Animated>
-                
-                   
-                </div>
-                   
+        
+                    <div id="buttonDiv">
+        
                         {this.state.clicked ?
                             <Chat   
                                     closePopup={this.showingChat.bind(this)}
@@ -132,7 +138,7 @@ class Landing extends Component {
                              
                              <button className="quizBut" onClick={this.showingQuiz.bind(this)}>Start the Quiz</button>  
    
-   
+                    </div>
         
                 
             </div>
