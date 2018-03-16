@@ -125,10 +125,6 @@ body {
 .chatBut{
     font-size: 1em;
     color:antiquewhite;
-    position: absolute;
-    bottom:0;
-    left:30%;
-    top:0;
     height:60px;
     width:60px;
     margin: auto;
@@ -143,20 +139,15 @@ body {
 }
 
 .chatBut:hover{
-    height:65px;
-    width:65px;
-    background-color: #ff997f;
-    border-color:  #ff997f;
+    background-color: #9ecdff;
+    border-color:  #9ecdff;
+    cursor:pointer;
 }
 
 
 .stickerBut{
     font-size: 1em;
     color:antiquewhite;
-    position: absolute;
-    bottom:0;
-    right:30%;
-    top:0;
     height:60px;
     width:60px;
     margin: auto;
@@ -171,21 +162,15 @@ body {
 }
 
 .stickerBut:hover{
-    height:65px;
-    width:65px; 
-    background-color: #ff997f;
-    border-color:  #ff997f;
+    background-color: #cfd8c3;
+    border-color:  #cfd8c3;
+    cursor:pointer;
 }
 
 
 .quizBut{
     font-size: 1em;
     color:antiquewhite;
-    position: absolute;
-    bottom:30%;
-    left:0;
-    right:0;
-    top:0;
     height:60px;
     width:60px;
     margin: auto;
@@ -199,10 +184,9 @@ body {
 }
 
 .quizBut:hover{
-    height:65px;
-    width:65px; 
-    background-color: #ff997f;
-    border-color:  #ff997f;
+    background-color: #fdae9a;
+    border-color:  #fdae9a;
+    cursor:pointer;
 }
 
 
@@ -224,12 +208,10 @@ body {
 .bloomDiv{
     text-align: center;
     position: absolute;
-
     top:0;
     left:0;
     right:0;
-    bottom:0;
-  
+    bottom:200px;
     height:150px;
     margin: auto;
     color:white;
@@ -251,80 +233,71 @@ body {
     /*glow effect is from code pen https://codepen.io/FelixRilling/pen/qzfoc?limit=all&page=1&q=neon */
 }
 
-
-.kaylie{
-    position:absolute;
-    text-align: center;
-    top:0;
-    bottom:0;
-    height:300px;
-    width:300px;
-    margin: auto;
-  
-}
-
-
-.sehee{
-    position:absolute;
-    text-align: center;
-    top:0;
-    right:0;
-    bottom:0;
-    height:300px;
-    width:300px;
-    margin: auto;
-}
-
-.leo{
-    position:absolute;
-    text-align: center;
-    top:0;
+.teamMembers{
+    display: inline-block;
+    position:fixed;
     left:0;
-    right:0;
-    height:300px;
-    width:300px;
+    width:100px;
+    height:100vh;
     margin: auto;
 }
 
-.kaylieCircle {
+#buttonDiv{
+    display: inline-flex;
+    position: absolute;
+    top:50px;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    width: 100%;
+}
+
+.kaylie {
     text-align: center;
     margin: auto;
-	width: 200px;
-	height: 200px;
+	width: 100px;
+	height: 100px;
     background-image: url(img/moa.png);
 	-moz-border-radius: 100px;
 	-webkit-border-radius: 100px;
 	border-radius: 100px;
     box-shadow: 0 0 25px #cfd8c3;
+    background-repeat: no-repeat;
+    background-size: cover;
 
 }
 
 
-.seheeCircle {
+.sehee {
     text-align: center;
     margin: auto;
-    width: 200px;
-    height: 200px;
+    width: 100px;
+    height: 100px;
     background-image: url(img/sehee.png);
     -moz-border-radius: 100px;
     -webkit-border-radius: 100px;
     border-radius: 100px;
     box-shadow: 0 0 25px #cfd8c3;
+    background-repeat: no-repeat;
+    background-size: cover;
 
 
 }
 
 
-.leoCircle {
+.leo{
     text-align: center;
     margin: auto;
-    width: 200px;
-    height: 200px;
+    width: 100px;
+    height: 100px;
     background-image: url(img/leo.jpg);
     -moz-border-radius: 100px;
     -webkit-border-radius: 100px;
     border-radius: 100px;
     box-shadow: 0 0 25px #cfd8c3;
+    background-repeat: no-repeat;
+    background-size: cover;
 
 
 }
@@ -528,3 +501,5 @@ body {
     margin: auto;
 
 }
+
+
