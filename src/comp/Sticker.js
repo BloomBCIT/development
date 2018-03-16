@@ -35,7 +35,7 @@ class Sticker extends Component {
         
     componentDidMount(){
         //console.log(this.refs.thedisplay.id);
-        this.socket = mySocket("https://bloombcit-sticker.herokuapp.com/");
+        this.socket = mySocket("https://bloomsticker.herokuapp.com/");
         
         this.socket.on("createimage", (data)=>{
             this.setState({
