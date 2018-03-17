@@ -159,7 +159,7 @@ class Sticker extends Component {
             comp = (
                 <div>
                     <div ref="thedisplay" id="display2">
-                        <img id="bgImg" src={this.state.bgImgsrc}  height={50}/>
+                        <img id="bgImg" src={this.state.bgImgsrc} />
                         {auImgs}
                         {stickers}
                     </div>

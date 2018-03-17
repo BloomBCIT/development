@@ -122,6 +122,32 @@ body {
 }
 
 
+.teamBut{
+    bottom:0;
+    left:0;
+    right:0;
+    position: absolute;
+    font-size: 1em;
+    color:antiquewhite;
+    height:35px;
+    width:35px;
+    margin: auto;
+    text-align: center;
+    background-color: #B74059;
+    border-color: #B74059;
+    -moz-border-radius: 50px;
+	-webkit-border-radius: 50px;
+	border-radius: 50px;
+    box-shadow: 0 0 10px #ffffff;     
+    
+}
+
+.teamBut:hover{
+    background-color: #9ecdff;
+    border-color: #9ecdff;
+    cursor:pointer;
+}
+
 .chatBut{
     font-size: 1em;
     color:antiquewhite;
@@ -234,11 +260,13 @@ body {
 }
 
 .teamMembers{
-    display: inline-block;
-    position:fixed;
-    left:0;
-    width:100px;
-    height:100vh;
+    display: inline-flex;
+    position:absolute;  
+    bottom:0;
+    right: 0;
+    left: 0;
+    width:100vw;
+    height:300px;
     margin: auto;
 }
 
@@ -265,7 +293,10 @@ body {
     box-shadow: 0 0 25px #cfd8c3;
     background-repeat: no-repeat;
     background-size: cover;
-
+    animation: float 6s ease-in-out infinite;
+    
+    /*Animation effect is from https://codepen.io/MarioDesigns/pen/woJgeo?q=animation%20css&order=popularity&depth=everything&show_forks=false*/
+    
 }
 
 
@@ -281,7 +312,9 @@ body {
     box-shadow: 0 0 25px #cfd8c3;
     background-repeat: no-repeat;
     background-size: cover;
-
+    animation: float 6s ease-in-out infinite;
+    
+    /*Animation effect is from https://codepen.io/MarioDesigns/pen/woJgeo?q=animation%20css&order=popularity&depth=everything&show_forks=false*/
 
 }
 
@@ -298,8 +331,10 @@ body {
     box-shadow: 0 0 25px #cfd8c3;
     background-repeat: no-repeat;
     background-size: cover;
-
-
+    animation: float 6s ease-in-out infinite;
+    
+/*Animation effect is from https://codepen.io/MarioDesigns/pen/woJgeo?q=animation%20css&order=popularity&depth=everything&show_forks=false*/
+    
 }
 
 
@@ -317,29 +352,88 @@ body {
     font-family: Gill Sans;
 }
 
-.kaylieCircle:hover .name {
+
+
+
+.kaylie:hover .kaylieCircle{
     visibility: visible;
     opacity: 1;
 }
 
 
-.seheeCircle:hover .name{
+.sehee:hover .seheeCircle{
     visibility: visible;
     opacity: 1;
 }
 
-.leoCircle:hover .name{
+.leo:hover .leoCircle{
     visibility: visible;
     opacity: 1;
 }
 
-.kaylieP, .seheeP{
+.kaylieCircle, .seheeCircle, .leoCircle{
+    visibility: hidden;
     font-family: monospace;
     margin:0;
-    color: black;
+    color: #000000;
     font-size: 1.7em;
 }
-    
+  
+
+/*float effect starts*/
+
+@keyframes float {
+	0% {
+		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+		transform: translatey(0px);
+	}
+	50% {
+		box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2);
+		transform: translatey(-20px);
+	}
+	100% {
+		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+		transform: translatey(0px);
+	}
+}
+
+
+
+@-webkit-keyframes float {
+	0% {
+		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+		transform: translatey(0px);
+	}
+	50% {
+		box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2);
+		transform: translatey(-20px);
+	}
+	100% {
+		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+		transform: translatey(0px);
+	}
+}
+
+
+
+@-moz-keyframes float {
+	0% {
+		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+		transform: translatey(0px);
+	}
+	50% {
+		box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2);
+		transform: translatey(-20px);
+	}
+	100% {
+		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+		transform: translatey(0px);
+	}
+}
+
+
+
+/*float effect finishes*/
 
 /* neon effect keyframes start*/
 
@@ -510,7 +604,6 @@ body {
     right:0;
     width:80vw;
     height:80vh;
-    cursor:none;
     margin: auto;
 
 }

@@ -5,6 +5,7 @@ import logo from "../img/logo2.png";
 import Chat from '../comp/Chat';
 import Sticker from '../comp/Sticker';
 import Quiz from '../comp/Quiz';
+import Team from '../comp/Team';
 
 class Landing extends Component {
     constructor(props){
@@ -14,11 +15,15 @@ class Landing extends Component {
             clicked:false,
             StickerClicked:false,
             quizClicked:false,
+            teamClicked:false,
 
         };
         
         this.nextPage = this.nextPage.bind(this);
         this.showingChat = this.showingChat.bind(this);
+        this.showingSticker = this.showingSticker.bind(this);
+        this.showingQuiz = this.showingQuiz.bind(this);
+        this.showingTeam = this.showingTeam.bind(this);
     }
     
     nextPage(){
@@ -46,6 +51,13 @@ class Landing extends Component {
     });
     }
     
+    showingTeam(){
+        this.setState({
+            teamClicked: !this.state.teamClicked
+    });
+    }
+    
+    
   render() {
     
       
@@ -64,48 +76,7 @@ class Landing extends Component {
                 </div>
         
         
-                <div className="teamMembers">
-                    <div className="kaylie">
-                        <Animated animationIn="swing" animationOut="swing" isVisible={true}>
-
-
-                            <div className="kaylieCircle">
-                                <p className="name">KAYLIE SON</p>
-
-                            </div>
-                        </Animated>
-
-
-                    </div>
-
-
-                    <div className="leo">
-                        <Animated animationIn="swing" animationOut="swing" isVisible={true}>
-
-
-                            <div className="leoCircle">
-                                <p className="name">LEO LOU</p>
-                            </div>
-                        </Animated>
-
-
-                    </div>    
-
-                    <div className="sehee">
-                        <Animated animationIn="swing" animationOut="swing" isVisible={true}>
-
-
-                            <div className="seheeCircle">
-                                <p className="name">SEHEE AHN</p>
-                            </div>
-                        </Animated>
-
-
-                    </div>
-                   
-                </div>
-        
-        
+                    
         
                     <div id="buttonDiv">
         
@@ -138,6 +109,20 @@ class Landing extends Component {
                              
                              <button className="quizBut" onClick={this.showingQuiz.bind(this)}>Start the Quiz</button>  
    
+                             
+                             {this.state.teamClicked ?
+                            <Team   
+                                    closePopup={this.showingTeam.bind(this)}
+                                        />
+                                        : null
+                            }
+                            
+                             <button className="teamBut" onClick={this.showingTeam.bind(this)}>&#x21EA;</button>
+        
+        
+        
+                             
+                             
                     </div>
         
                 
