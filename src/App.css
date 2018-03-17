@@ -610,7 +610,7 @@ body {
 
 .insideWhichRoom{
 	height:70%;
-	width:60%;
+	width:50%;
 	top:0;
 	bottom:0;
 	position: absolute;
@@ -638,7 +638,7 @@ body {
 }
 .option{
 	text-align:center;
-	width: 50%;
+	width: 48%;
 	height: 5vh;
 	margin: 0.3%;
 }
@@ -674,7 +674,7 @@ body {
 .roomBut5{
     z-index: 99;
     position:relative;
-    height:30px;
+    height:5vh;
     width:80%;
     margin: auto;
   	margin-top:2%;
