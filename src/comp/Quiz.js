@@ -106,7 +106,7 @@ class Quiz extends Component {
                     <div>
                    		<div className="insideWhichRoom">
                    		<p className="word">Make a question for tea discovery.</p><br/>
-                        <input className="typeQuestion option" ref="q" type="text" placeholder="Type your question here" /><br/>
+                        <input className="typeQuestion" ref="q" type="text" placeholder="Type your question here" /><br/>
                         <input className="option" ref="o1" type="text" placeholder="option1" />
                         <input className="option" ref="o2" type="text" placeholder="option2" /><br/>
                         <select className="typeQuestion" ref="a">
