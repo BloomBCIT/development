@@ -103,7 +103,7 @@ class Quiz extends Component {
         } else if (this.state.stage  === 2){
             if(this.state.host ===true){
                 comp = (
-                    <div>
+
                    		<div className="insideWhichRoom">
                    		<p className="word fontsize">Make a question for tea discovery.</p><br/>
                         <input className="typeQuestion fontsize" ref="q" type="text" placeholder="Type your question here" /><br/>
@@ -116,7 +116,7 @@ class Quiz extends Component {
                         </select><br/>
                         <button className="roomBut5 question" onClick={this.handleQuestion}> Submit Question</button>
                    		</div>
-                    </div>
+            
                 );
                 
             } else if(this.state.host ===false){
