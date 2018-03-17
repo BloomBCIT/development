@@ -597,13 +597,13 @@ body {
 
 .entireDiv{
     position:fixed;
-    background-color:skyblue;
+    background-color:#EE7563;
     left:0;
     top:0;
     bottom:0;
     right:0;
     width:80vw;
-    height:80vh;
+    height:40vh;
     margin: auto;
 
 }
