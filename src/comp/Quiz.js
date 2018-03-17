@@ -124,7 +124,7 @@ class Quiz extends Component {
                     <div className="showingRooms">
                     
                     	<div className="insideWhichRoom">
-                        <div className="question">{this.state.qobj.q}</div>
+                        <div className="givenQuestion">{this.state.qobj.q}</div>
                         
                         <button className="option" onClick={this.handleAnswer.bind(this, "1")}>{this.state.qobj.o1}</button>
                         <button className="option" onClick={this.handleAnswer.bind(this, "2")}>{this.state.qobj.o2}</button>
