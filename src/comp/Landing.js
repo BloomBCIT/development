@@ -6,6 +6,7 @@ import Chat from '../comp/Chat';
 import Sticker from '../comp/Sticker';
 import Quiz from '../comp/Quiz';
 import Team from '../comp/Team';
+import Game from '../comp/Game';
 
 class Landing extends Component {
     constructor(props){
@@ -16,6 +17,7 @@ class Landing extends Component {
             StickerClicked:false,
             quizClicked:false,
             teamClicked:false,
+            gameClicked:false,
 
         };
         
@@ -24,6 +26,7 @@ class Landing extends Component {
         this.showingSticker = this.showingSticker.bind(this);
         this.showingQuiz = this.showingQuiz.bind(this);
         this.showingTeam = this.showingTeam.bind(this);
+        this.showingGame = this.showingGame.bind(this);
     }
     
     nextPage(){
@@ -54,6 +57,13 @@ class Landing extends Component {
     showingTeam(){
         this.setState({
             teamClicked: !this.state.teamClicked
+    });
+    }
+    
+    
+    showingGame(){
+        this.setState({
+            gameClicked: !this.state.gameClicked
     });
     }
     
@@ -107,8 +117,20 @@ class Landing extends Component {
                             }
                              
                              
-                             <button className="quizBut" onClick={this.showingQuiz.bind(this)}>Start the Quiz</button>  
+                             <button className="quizBut" onClick={this.showingQuiz.bind(this)}>Quiz</button>  
    
+                             
+                             
+                             {this.state.gameClicked ?
+                            <Game   
+                                    closePopup={this.showingGame.bind(this)}
+                                        />
+                                        : null
+                            }
+                            
+                             <button className="gameBut" onClick={this.showingGame.bind(this)}>Game</button>
+        
+                             
                              
                              {this.state.teamClicked ?
                             <Team   

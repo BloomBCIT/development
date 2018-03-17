@@ -216,6 +216,28 @@ body {
 }
 
 
+.gameBut{
+    font-size: 1em;
+    color:antiquewhite;
+    height:60px;
+    width:60px;
+    margin: auto;
+    background-color: #ed7a5d;
+    border-color: #ed7a5d;
+    -moz-border-radius: 50px;
+	-webkit-border-radius: 50px;
+	border-radius: 50px;
+    text-align: center;
+    box-shadow: 0 0 10px #ffffff;      
+}
+
+.gameBut:hover{
+    background-color: #ed5d9f;
+    border-color:  #ed5d9f;
+    cursor:pointer;
+}
+
+
 
 .wrap{
     background-image: url(../src/img/Bloom_bg1.png);
