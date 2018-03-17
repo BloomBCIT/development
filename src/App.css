@@ -632,7 +632,7 @@ body {
 
 .insideWhichRoom{
 	height:70%;
-	width:80%;
+	width:50%;
 	top:0;
 	bottom:0;
 	position: absolute;
@@ -653,18 +653,19 @@ body {
 
 .typeQuestion{
 	text-align:center;
-	width: 30vw;
+	width: 100%;
 	height: 5vh;
 	margin: 1%;
 	
 }
 .option{
 	text-align:center;
-	width: 14.5vw;
+	width: 48%;
 	height: 5vh;
-	margin: 0.3%;
-	font-size: 0.9em;
-	
+	margin: auto;
+}
+.fontsize{
+	font-size: 18px;
 }
 
 .roomBut3{
@@ -695,8 +696,8 @@ body {
 .roomBut5{
     z-index: 99;
     position:relative;
-    height:30px;
-    width:70px;
+    height:5vh;
+    width:80%;
     margin: auto;
   	margin-top:2%;
     background-color: #ed7a5d;
@@ -704,3 +705,5 @@ body {
     box-shadow: 0 0 10px #ffffff; 
     color:antiquewhite;
 }
+
+
