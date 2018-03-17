@@ -608,4 +608,70 @@ body {
 
 }
 
+.insideWhichRoom{
+	height:70%;
+	width:80%;
+	top:0;
+	bottom:0;
+	position: absolute;
+	left:0;
+	right:0;
+	margin:auto;
+	
+}
+.word {
+	color:antiquewhite;
+}
 
+.typeQuestion{
+	text-align:center;
+	width: 30vw;
+	height: 5vh;
+	margin: 1%;
+	
+}
+.option{
+	text-align:center;
+	width: 14.5vw;
+	height: 5vh;
+	margin: 0.3%;
+	
+}
+
+.roomBut3{
+    z-index: 99;
+    position:relative;
+    height:30px;
+    width:50px;
+    margin: auto;
+   
+    background-color: #ed7a5d;
+    border-color: #ed7a5d;
+    box-shadow: 0 0 10px #ffffff; 
+    color:antiquewhite;
+    
+}
+.roomBut4{
+    z-index: 99;
+    position:relative;
+    height:30px;
+    width:50px;
+    margin: auto;
+  	margin-left:10px;
+    background-color: #ed7a5d;
+    border-color: #ed7a5d;
+    box-shadow: 0 0 10px #ffffff; 
+    color:antiquewhite;
+}
+.roomBut5{
+    z-index: 99;
+    position:relative;
+    height:30px;
+    width:70px;
+    margin: auto;
+  	margin-top:2%;
+    background-color: #ed7a5d;
+    border-color: #ed7a5d;
+    box-shadow: 0 0 10px #ffffff; 
+    color:antiquewhite;
+}
