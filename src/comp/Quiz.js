@@ -105,11 +105,11 @@ class Quiz extends Component {
                 comp = (
                     <div>
                    		<div className="insideWhichRoom">
-                   		<p className="word">Make a question for tea discovery.</p><br/>
-                        <input className="typeQuestion" ref="q" type="text" placeholder="Type your question here" /><br/>
-                        <input className="option" ref="o1" type="text" placeholder="option1" />
-                        <input className="option" ref="o2" type="text" placeholder="option2" /><br/>
-                        <select className="typeQuestion" ref="a">
+                   		<p className="word fontsize">Make a question for tea discovery.</p><br/>
+                        <input className="typeQuestion fontsize" ref="q" type="text" placeholder="Type your question here" /><br/>
+                        <input className="option fontsize" ref="o1" type="text" placeholder="option1" />
+                        <input className="option fontsize" ref="o2" type="text" placeholder="option2" /><br/>
+                        <select className="typeQuestion fontsize" ref="a">
                         	<option className="option" value="1">Choose Answer</option>
                             <option className="option" value="1">Option 1</option>
                             <option className="option" value="2">Option 2</option>
@@ -124,7 +124,7 @@ class Quiz extends Component {
                     <div className="showingRooms">
                     
                     	<div className="insideWhichRoom">
-                        <div className="givenQuestion">{this.state.qobj.q}</div>
+                        <div className="fontsize">{this.state.qobj.q}</div>
                         
                         <button className="option" onClick={this.handleAnswer.bind(this, "1")}>{this.state.qobj.o1}</button>
                         <button className="option" onClick={this.handleAnswer.bind(this, "2")}>{this.state.qobj.o2}</button>
