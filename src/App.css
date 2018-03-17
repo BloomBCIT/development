@@ -621,8 +621,13 @@ body {
 }
 .word {
 	color:antiquewhite;
-	font-size: 12em;
+	
 }
+.word {
+	color:antiquewhite;
+	font-size: 0.9em;
+}
+
 
 .typeQuestion{
 	text-align:center;
@@ -636,6 +641,7 @@ body {
 	width: 14.5vw;
 	height: 5vh;
 	margin: 0.3%;
+	font-size: 0.9em;
 	
 }
 
