@@ -4,6 +4,11 @@ body {
     /*background-image: url(img/Bloom_bg.png);*/
 }
 
+.bee{
+    position: absolute;
+}
+
+
 #allUsers{
     position: absolute;
     margin-left:10px;
@@ -557,6 +562,19 @@ body {
     width:100vw;
     height:100vh;
     cursor:none;
+}
+
+
+#bgImg1 {
+
+    position:fixed;
+    left:0;
+    top:0;
+    bottom:0;
+    right:0;
+    margin:auto;
+    width:100vw;
+    height:100vh;
 }
 
 

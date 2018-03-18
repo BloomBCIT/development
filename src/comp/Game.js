@@ -1,27 +1,15 @@
 import React, { Component } from 'react';
 import '../App.css';
 import mySocket from "socket.io-client";
-import Room from "./Room";
+import GameRooms from "./GameRooms";
 
 class Game extends Component {
     constructor(props){
         super(props);
         this.state = {
-            myImg:require("../img/flower1.png"),
-            myImg2:require("../img/flower2.png"),
-            myImg3:require("../img/flower3.png"),
-            myImg4:require("../img/flower4.png"),
-            myImg5:require("../img/flower5.png"),
-            myImg6:require("../img/flower6.png"), 
-            myImg7:require("../img/flower7.png"), 
-            myImg8:require("../img/flower8.png"), 
-            myImg10:require("../img/flower9.png"), 
-            myImg11:require("../img/flavor1.png"), 
-            myImg12:require("../img/flavor2.png"), 
-            myImg13:require("../img/flavor3.png"), 
-            myImg14:require("../img/flavor4.png"), 
-            myImg15:require("../img/flavor5.png"), 
-            bgImgsrc:require("../img/dynamicflower.png"), 
+            
+            bgImgsrc:require("../img/garden.png"), beesrc:require("../img/bee.png"), 
+            beeclicked:require("../img/cryingbee.png"), 
             allusers:[],
             myId:null,
             showDisplay:false,
@@ -29,8 +17,9 @@ class Game extends Component {
             
         }
         
-        this.handleImage = this.handleImage.bind(this);
+        this.handleImg = this.handleImg.bind(this);
         this.handleDisplay = this.handleDisplay.bind(this);
+        this.randomMove = this.randomMove.bind(this);
     }
       
         
@@ -48,76 +37,16 @@ class Game extends Component {
             this.setState({
                 myId:data
             });
-        
-        this.refs.thedisplay.addEventListener("mousemove", (ev)=>{
-            //console.log("moving", ev.pageX, ev.pageY);
-            //this.refs.myImg.style.left = ev.pageX+"px";
-            //this.refs.myImg.style.top = ev.pageY+"px";
-            if(this.state.myId === null){
-                return false;
-            }
-            
-            this.refs["u"+this.state.myId].style.left = ev.pageX+"px";
-            this.refs["u"+this.state.myId].style.top = ev.pageY+"px";
-            
-            this.socket.emit("mymove", {
-                x:ev.pageX,
-                y:ev.pageY,
-                id:this.state.myId,
-                src:this.refs["u"+this.state.myId].src
-            });
-        });
-            
-            this.refs.thedisplay.addEventListener("click", (ev)=>{
-                this.socket.emit("sticker", {
-                    x:ev.pageX,
-                    y:ev.pageY,
-                    //id:this.state.myId,
-                    src:this.refs["u"+this.state.myId].src
-            });
-                })
-                
             
        }); 
 
-        this.socket.on("newsticker", (data)=>{
-            this.setState({
-                stickers:data
-            })
-            
-        })
-        
-        this.socket.on("usermove", (data)=>{
-            console.log("user has moved");
-            this.refs["u"+data.id].style.top = data.y+"px";
-            this.refs["u"+data.id].style.left = data.x+"px";
-            this.refs["u"+data.id].src = data.src;
-        })
-        /*
-        this.refs.thedisplay.addEventListener("mousemove", (ev)=>{
-            //console.log("moving", ev.pageX, ev.pageY);
-            //this.refs.myImg.style.left = ev.pageX+"px";
-            //this.refs.myImg.style.top = ev.pageY+"px";
-            if(this.state.myId === null){
-                return false;
-            }
-            
-            this.refs["u"+this.state.myId].style.left = ev.pageX+"px";
-            this.refs["u"+this.state.myId].style.top = ev.pageY+"px";
-            
-            this.socket.emit("mymove", {
-                x:ev.pageX,
-                y:ev.pageY,
-                id:this.state.myId,
-                img:this.refs["u"+this.state.myId].src
-            });
-        });
-         */
+       
+       
     }
    
     
-    handleImage(evt){
-        this.refs["u"+this.state.myId].src = evt.target.src;
+    handleImg(){
+        this.refs["u"].src = this.state.beeclicked;
     }
     
     handleDisplay(roomString){
@@ -129,70 +58,62 @@ class Game extends Component {
         
     }
     
-    render() {
-        var auImgs = this.state.allusers.map((obj,i)=>{
-            return (
-                <img ref={"u"+obj} className="allImgs" src={this.state.myImg} height={50} key={i} />
-            )
-        });
+    
+    randomMove() {
+
+        var windowH= window.innerHeight;
+        var windowW= window.innerWidth;
+        var maxLeft = parseInt(windowW-100+"px");
+        var maxTop = parseInt(windowH-100+"px");
+
+        this.refs["u"].style.top = Math.floor(Math.random() * maxTop) + "px";
+        this.refs["u"].style.left = Math.floor(Math.random() * maxLeft) + "px";
         
-        var stickers = this.state.stickers.map((obj,i)=>{
-            
-            var mstyle = {left:obj.x, top:obj.y}
-            
-            return(
-                <img style={mstyle} src={obj.src} key={i} height={50} className="allImgs"/>
-            
-            )
-            
-        })
+
+   
+    }
+    
+    render() {
+        
+        
+        var interval = setInterval(this.randomMove, 3000);
+            function checkTime(i) {
+                if (i < 10) {i = "0" + i}; 
+            return i;
+        } 
         
         
         var comp = null;
         
         if(this.state.showDisplay ===false){
-            comp = <Room 
+            comp = <GameRooms 
                 handleDisplay={this.handleDisplay}
             />;
             
         }else{
             comp = (
-                <div>
-                    <div ref="thedisplay" id="display2">
-                        <img id="bgImg" src={this.state.bgImgsrc} />
-                        {auImgs}
-                        {stickers}
-                    </div>
-                
-                        <div id="yourId">YOUR ID: {this.state.myId}</div>
-                        
-                        <div id="controls3">
-                            
-                            <img src={this.state.myImg} height={50} onClick={this.handleImage} />
-                            <img src={this.state.myImg2} height={50} onClick={this.handleImage} />
-                            <img src={this.state.myImg3} height={50} onClick={this.handleImage} />
-                            <img src={this.state.myImg4} height={50} onClick={this.handleImage} />
-                            <img src={this.state.myImg5} height={50} onClick={this.handleImage} />
-                            <img src={this.state.myImg6} height={50} onClick={this.handleImage} />
-                            <img src={this.state.myImg7} height={50} onClick={this.handleImage} />
-                            <img src={this.state.myImg8} height={50} onClick={this.handleImage} />
-                            <img src={this.state.myImg9} height={50} onClick={this.handleImage} />
+                <div id="container">
+                    <img id="bgImg" src={this.state.bgImgsrc} />
+                        <div >
+                           <div id="username"></div>
+
+                            <p id="scoreText">Score: <span id="scoreNum"> 0</span></p>  
+
+                            <button id="endGame">END GAME</button>
+
+                            <div id="highest"><p> Top User & Score</p><p sid="highestScore"></p>
+                            </div> 
                         </div>
+
+                            <img ref={"u"} className="bee" src={this.state.beesrc} onClick= {this.handleImg} height={50} />
                 
-                        <div id="controls4">
-                            <img src={this.state.myImg11} height={50} onClick={this.handleImage} />
-                            <img src={this.state.myImg12} height={50} onClick={this.handleImage} />
-                            <img src={this.state.myImg13} height={50} onClick={this.handleImage} />
-                            <img src={this.state.myImg14} height={50} onClick={this.handleImage} />
-                            <img src={this.state.myImg15} height={50} onClick={this.handleImage} />
-                        </div>
-            </div>
-        );
-        
+
+
+                 </div>
+        );   
             
             
         }
-        
         
         return (
             <div className="App">
