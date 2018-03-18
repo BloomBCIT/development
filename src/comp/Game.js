@@ -8,8 +8,10 @@ class Game extends Component {
         super(props);
         this.state = {
             
-            bgImgsrc:require("../img/garden.png"), beesrc:require("../img/bee.png"), 
+            bgImgsrc:require("../img/garden.png"), 
+            beesrc:require("../img/bee.png"), 
             beeclicked:require("../img/cryingbee.png"), 
+            audiosrc:require("../img/clicked1.mp3"), 
             allusers:[],
             myId:null,
             showDisplay:false,
@@ -20,6 +22,7 @@ class Game extends Component {
         this.handleImg = this.handleImg.bind(this);
         this.handleDisplay = this.handleDisplay.bind(this);
         this.randomMove = this.randomMove.bind(this);
+      
     }
       
         
@@ -42,6 +45,8 @@ class Game extends Component {
     
     handleImg(){
         this.refs["u"].src = this.state.beeclicked;
+        var audioPlay = new Audio(this.state.audiosrc);
+        audioPlay.play();
     }
     
     handleDisplay(roomString){
@@ -67,6 +72,7 @@ class Game extends Component {
 
    
     }
+
     
     render() {
         
@@ -89,7 +95,9 @@ class Game extends Component {
             comp = (
                 <div id="gameContainer">
                         <div>
-                           <div id="username"></div>
+                           <div id="username">
+                                YOUR ID: {this.state.myId}
+                            </div>
 
                             <div>Score: </div>  
 
@@ -102,7 +110,7 @@ class Game extends Component {
                             </div> 
                         </div>
 
-                            <img ref={"u"} className="bee" src={this.state.beesrc} onClick= {this.handleImg} height={100} />
+                            <img ref={"u"} className="bee" src={this.state.beesrc} onClick= {this.handleImg}  height={100} />
                 
 
 
