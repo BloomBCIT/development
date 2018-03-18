@@ -24,23 +24,18 @@ class Game extends Component {
       
         
     componentDidMount(){
-        //console.log(this.refs.thedisplay.id);
+
         this.socket = mySocket("https://bloomgame.herokuapp.com/");
-        
-        this.socket.on("createimage", (data)=>{
-            this.setState({
-                allusers:data
-            })
-        });
+    
         
         this.socket.on("yourid", (data)=>{
             this.setState({
                 myId:data
             });
             
-       }); 
+       });
+        
 
-       
        
     }
    
@@ -63,8 +58,8 @@ class Game extends Component {
 
         var windowH= window.innerHeight;
         var windowW= window.innerWidth;
-        var maxLeft = parseInt(windowW-100+"px");
-        var maxTop = parseInt(windowH-100+"px");
+        var maxLeft = parseInt(windowW-200+"px");
+        var maxTop = parseInt(windowH-200+"px");
 
         this.refs["u"].style.top = Math.floor(Math.random() * maxTop) + "px";
         this.refs["u"].style.left = Math.floor(Math.random() * maxLeft) + "px";
@@ -92,20 +87,22 @@ class Game extends Component {
             
         }else{
             comp = (
-                <div id="container">
-                    <img id="bgImg" src={this.state.bgImgsrc} />
-                        <div >
+                <div id="gameContainer">
+                        <div>
                            <div id="username"></div>
 
-                            <p id="scoreText">Score: <span id="scoreNum"> 0</span></p>  
+                            <div>Score: </div>  
 
+                            
+
+                            <div id="highest">Top User & Score
+                
                             <button id="endGame">END GAME</button>
-
-                            <div id="highest"><p> Top User & Score</p><p sid="highestScore"></p>
+                
                             </div> 
                         </div>
 
-                            <img ref={"u"} className="bee" src={this.state.beesrc} onClick= {this.handleImg} height={50} />
+                            <img ref={"u"} className="bee" src={this.state.beesrc} onClick= {this.handleImg} height={100} />
                 
 
 
@@ -116,7 +113,7 @@ class Game extends Component {
         }
         
         return (
-            <div className="App">
+            <div className="gameApp">
               {comp}
             </div>
         );
