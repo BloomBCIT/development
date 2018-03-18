@@ -650,7 +650,7 @@ body {
 
 .insideWhichRoom{
 	height:70%;
-	width:50%;
+	width:80%;
 	top:0;
 	bottom:0;
 	position: absolute;
@@ -671,7 +671,7 @@ body {
 
 .typeQuestion{
 	text-align:center;
-	width: 100%;
+	width: 96%;
 	height: 5vh;
 	margin: 1%;
 	
