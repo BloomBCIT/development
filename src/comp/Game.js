@@ -112,12 +112,13 @@ class Game extends Component {
         })  
     
         
-        var interval = setInterval(this.randomMove, 3000);
-            function checkTime(i) {
-                if (i < 10) {i = "0" + i}; 
-            return i;
-        } 
-        
+        if(this.state.mode === 1){
+            var interval = setInterval(this.randomMove, 3000);
+                function checkTime(i) {
+                    if (i < 10) {i = "0" + i}; 
+                    return i;
+                } 
+        }
         
         
         if(this.state.ending ===true){          
