@@ -77,6 +77,7 @@ class Quiz extends Component {
         if(this.state.stage ===0){
               comp = (
                 <div className="whichRoom">
+                  <button className="xbutton" onClick={this.props.closePopup}>X</button>
                 	<div className="insideWhichRoom">
 					<img src={this.state.cupimg} height={200}/><br/>
 					<p className="word">We would like to know your tea taste!</p><br/>
@@ -92,6 +93,7 @@ class Quiz extends Component {
                 comp = (
                 <div>
                 	<div className="insideWhichRoom">
+                    <button className="xbutton" onClick={this.props.closePopup}>X</button>
                  		<button className="roomBut3" onClick={this.handlePlayers.bind(this, true)}>Host</button>
                   		<button className="roomBut4" onClick={this.handlePlayers.bind(this, false)}>Player</button>
             		</div>
@@ -105,6 +107,7 @@ class Quiz extends Component {
                 comp = (
 
                    		<div className="insideWhichRoom">
+                            <button className="xbutton" onClick={this.props.closePopup}>X</button>
                    		<p className="word fontsize">Make a question for tea discovery.</p><br/>
                         <input className="typeQuestion fontsize" ref="q" type="text" placeholder="Type your question here" /><br/>
                         <input className="option fontsize" ref="o1" type="text" placeholder="option1" />
@@ -122,6 +125,7 @@ class Quiz extends Component {
             } else if(this.state.host ===false){
                 comp = (
                     <div className="showingRooms">
+                    <button className="xbutton" onClick={this.props.closePopup}>X</button>
                     
                     	<div className="insideWhichRoom">
                         <div className="fontsize">{this.state.qobj.q}</div>

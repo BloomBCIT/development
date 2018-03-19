@@ -16,7 +16,8 @@ class Game extends Component {
             allusers:[],
             myId:null,
             showDisplay:false,
-            stickers:[]
+            stickers:[],
+            ending:false
             
             
         }
@@ -24,6 +25,7 @@ class Game extends Component {
         this.handleImg = this.handleImg.bind(this);
         this.handleDisplay = this.handleDisplay.bind(this);
         this.randomMove = this.randomMove.bind(this);
+        this.endGame = this.endGame.bind(this);
       
     }
       
@@ -79,6 +81,13 @@ class Game extends Component {
     }
 
     
+    endGame(){
+        this.setState({
+            ending:true
+        });
+        
+    }
+    
     render() {
         
         
@@ -87,6 +96,13 @@ class Game extends Component {
                 if (i < 10) {i = "0" + i}; 
             return i;
         } 
+        
+        
+        
+        if(this.state.ending ===true){          
+            clearInterval(interval);
+        }
+        
         
         
         var comp = null;
@@ -99,18 +115,17 @@ class Game extends Component {
         }else{
             comp = (
                 <div id="gameContainer">
-                        <div>
+                        <div>                 
                            <div id="username">
                                 YOUR ID: {this.state.myId}
                             </div>
 
                             <div>Score: {this.state.userScore} </div>  
 
-                            <div id="highest">Top User & Score
                 
-                            <button id="endGame">END GAME</button>
+                            <button onClick={this.endGame} id="endGame">END GAME</button>
                 
-                            </div> 
+                         
                         </div>
 
                             <img ref={"u"} className="bee" src={this.state.beesrc} onClick= {this.handleImg}  height={100} />

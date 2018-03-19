@@ -158,6 +158,7 @@ class Sticker extends Component {
         }else{
             comp = (
                 <div>
+                    <button className="xbutton" onClick={this.props.closePopup}>X</button>
                     <div ref="thedisplay" id="display2">
                         <img id="bgImg" src={this.state.bgImgsrc} />
                         {auImgs}
