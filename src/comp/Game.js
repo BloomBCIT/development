@@ -129,7 +129,7 @@ class Game extends Component {
         var comp = null;
         
         if(this.state.mode === 0){
-            config= (
+            comp= (
             
             
             <div id="configBox">
