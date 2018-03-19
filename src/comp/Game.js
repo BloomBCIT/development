@@ -22,9 +22,9 @@ class Game extends Component {
             
             
         }
-        
+        this.joinChat = this.joinChat.bind(this);
+        this.handleUsername = this.handleUsername.bind(this);
         this.handleImg = this.handleImg.bind(this);
-        this.handleDisplay = this.handleDisplay.bind(this);
         this.randomMove = this.randomMove.bind(this);
         this.endGame = this.endGame.bind(this);
       
