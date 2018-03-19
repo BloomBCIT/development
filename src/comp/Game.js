@@ -11,11 +11,13 @@ class Game extends Component {
             bgImgsrc:require("../img/garden.png"), 
             beesrc:require("../img/bee.png"), 
             beeclicked:require("../img/cryingbee.png"), 
-            audiosrc:require("../img/clicked1.mp3"), 
+            audiosrc:require("../img/clicked1.mp3"),
+            userScore:0,
             allusers:[],
             myId:null,
             showDisplay:false,
             stickers:[]
+            
             
         }
         
@@ -44,10 +46,16 @@ class Game extends Component {
    
     
     handleImg(){
+        alert("Ouch!!")
         this.refs["u"].src = this.state.beeclicked;
         var audioPlay = new Audio(this.state.audiosrc);
         audioPlay.play();
+        this.setState({
+            userScore:this.state.userScore +1
+        });
+        
     }
+    
     
     handleDisplay(roomString){
         this.setState({
@@ -65,12 +73,9 @@ class Game extends Component {
         var windowW= window.innerWidth;
         var maxLeft = parseInt(windowW-200+"px");
         var maxTop = parseInt(windowH-200+"px");
-
         this.refs["u"].style.top = Math.floor(Math.random() * maxTop) + "px";
         this.refs["u"].style.left = Math.floor(Math.random() * maxLeft) + "px";
-        
-
-   
+  
     }
 
     
@@ -99,9 +104,7 @@ class Game extends Component {
                                 YOUR ID: {this.state.myId}
                             </div>
 
-                            <div>Score: </div>  
-
-                            
+                            <div>Score: {this.state.userScore} </div>  
 
                             <div id="highest">Top User & Score
                 
