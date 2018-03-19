@@ -138,6 +138,7 @@ class Game extends Component {
                         <div>                 
                            <div id="username">
                                 YOUR ID: {this.state.myId}
+                                Other Users:{allUsers}
                             </div>
 
                             <div>Score: {this.state.userScore} </div>  
