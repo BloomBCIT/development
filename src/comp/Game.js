@@ -13,7 +13,6 @@ class Game extends Component {
             beeclicked:require("../img/cryingbee.png"), 
             audiosrc:require("../img/clicked1.mp3"),
             userScore:0,
-            allusers:[],
             myId:null,
             showDisplay:false,
             stickers:[],
@@ -38,12 +37,7 @@ class Game extends Component {
         this.socket = mySocket("https://bloomgame.herokuapp.com/");
     
         
-        this.socket.on("yourid", (data)=>{
-            this.setState({
-                myId:data
-            });
-            
-       });
+        this.socket.emit("username", this.state.username);
         
         this.socket.on("usersjoined", (data)=>{
             console.log(data);
@@ -144,9 +138,10 @@ class Game extends Component {
                 <div id="gameContainer">
                         <div>                 
                            <div id="username">
-                                YOUR ID: {this.state.myId}
-                                Other Users:{allUsers}
+                                YOUR NAME: {this.state.username}
+                                
                             </div>
+                            <div>ALL USERS:{allUsers}</div>
 
                             <div>Score: {this.state.userScore} </div>  
 
