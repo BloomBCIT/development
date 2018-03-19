@@ -17,7 +17,8 @@ class Game extends Component {
             myId:null,
             showDisplay:false,
             stickers:[],
-            ending:false
+            ending:false,
+            users:[]
             
             
         }
@@ -41,6 +42,14 @@ class Game extends Component {
             });
             
        });
+        
+        this.socket.on("usersjoined", (data)=>{
+            console.log(data);
+            this.setState({
+                users:data
+            })
+            
+        });
         
 
        
@@ -90,6 +99,17 @@ class Game extends Component {
     
     render() {
         
+        
+        var allUsers = this.state.users.map((obj,i)=>{
+        return(
+            <div id="allUsersP" key={i}>
+                {obj}
+            </div>
+        
+        )    
+        
+        })  
+    
         
         var interval = setInterval(this.randomMove, 3000);
             function checkTime(i) {
