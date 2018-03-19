@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import '../App.css';
 import mySocket from "socket.io-client";
-import GameRooms from "./GameRooms";
 
 class Game extends Component {
     constructor(props){
         super(props);
         this.state = {
-            
+            mode:0,
+            username:"",
             bgImgsrc:require("../img/garden.png"), 
             beesrc:require("../img/bee.png"), 
             beeclicked:require("../img/cryingbee.png"), 
@@ -31,8 +31,10 @@ class Game extends Component {
     }
       
         
-    componentDidMount(){
-
+    joinChat(){
+        this.setState({
+            mode:1
+        })
         this.socket = mySocket("https://bloomgame.herokuapp.com/");
     
         
@@ -56,6 +58,13 @@ class Game extends Component {
     }
    
     
+       handleUsername(evt){
+        this.setState({
+            username:evt.target.value
+        })
+    }
+    
+    
     handleImg(){
         alert("Ouch!!")
         this.refs["u"].src = this.state.beeclicked;
@@ -68,15 +77,7 @@ class Game extends Component {
     }
     
     
-    handleDisplay(roomString){
-        this.setState({
-            showDisplay:true
-        });
-        this.socket.emit("joinroom", roomString);
-        
-        
-    }
-    
+
     
     randomMove() {
 
@@ -102,7 +103,7 @@ class Game extends Component {
         
         var allUsers = this.state.users.map((obj,i)=>{
         return(
-            <div id="allUsersP" key={i}>
+            <div key={i}>
                 {obj}
             </div>
         
@@ -127,12 +128,17 @@ class Game extends Component {
         
         var comp = null;
         
-        if(this.state.showDisplay ===false){
-            comp = <GameRooms 
-                handleDisplay={this.handleDisplay}
-            />;
+        if(this.state.mode === 0){
+            config= (
             
-        }else{
+            
+            <div id="configBox">
+                <input className="input0" type = "text" placeholder = "Type your username" onChange={this.handleUsername} />
+                <button className="joinChat" onClick = {this.joinChat}>Join </button>
+            </div>
+        
+        )
+        } else if(this.state.mode === 1){
             comp = (
                 <div id="gameContainer">
                         <div>                 
