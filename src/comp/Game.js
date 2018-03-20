@@ -24,6 +24,7 @@ class Game extends Component {
         this.joinChat = this.joinChat.bind(this);
         this.handleUsername = this.handleUsername.bind(this);
         this.handleImg = this.handleImg.bind(this);
+        this.handleImg2 = this.handleImg2.bind(this);
         this.randomMove = this.randomMove.bind(this);
         this.endGame = this.endGame.bind(this);
       
@@ -47,6 +48,7 @@ class Game extends Component {
             
         });
         
+        this.interval = setInterval(this.randomMove, 3000);
 
        
     }
@@ -60,7 +62,6 @@ class Game extends Component {
     
     
     handleImg(){
-        alert("Ouch!!")
         this.refs["u"].src = this.state.beeclicked;
         var audioPlay = new Audio(this.state.audiosrc);
         audioPlay.play();
@@ -68,6 +69,10 @@ class Game extends Component {
             userScore:this.state.userScore +1
         });
         
+    }
+    
+    handleImg2(){
+        this.refs["u"].src = this.state.beesrc;
     }
     
     
@@ -90,6 +95,9 @@ class Game extends Component {
             ending:true
         });
         
+        alert(this.state.username+ " Score is:"+this.state.userScore);
+//        this.refs["u"].style.display="none";
+        
     }
     
     render() {
@@ -104,19 +112,20 @@ class Game extends Component {
         )    
         
         })  
-    
         
-        if(this.state.mode === 1){
-            var interval = setInterval(this.randomMove, 3000);
+        var interval;
+        
+        /*if(this.state.mode === 1){
+            
                 function checkTime(i) {
                     if (i < 10) {i = "0" + i}; 
                     return i;
                 } 
-        }
+        }*/
         
-        
-        if(this.state.ending ===true){          
-            clearInterval(interval);
+        if(this.state.ending === true){
+           clearInterval(this.interval) 
+           
         }
         
         
@@ -127,7 +136,7 @@ class Game extends Component {
             comp= (
             
             
-            <div id="configBox">
+            <div ref={"c"} id="configBox">
                 <input className="input0" type = "text" placeholder = "Type your username" onChange={this.handleUsername} />
                 <button className="joinChat" onClick = {this.joinChat}>Join </button>
             </div>
@@ -151,7 +160,7 @@ class Game extends Component {
                          
                         </div>
 
-                            <img ref={"u"} className="bee" src={this.state.beesrc} onClick= {this.handleImg}  height={100} />
+                            <img ref={"u"} className="bee" src={this.state.beesrc} onMouseDown= {this.handleImg} onMouseUp={this.handleImg2} height={100} />
                 
 
 
