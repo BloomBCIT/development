@@ -95,9 +95,16 @@ class Game extends Component {
             ending:true
         });
         
-        alert(this.state.username+ " Score is:"+this.state.userScore);
-//        this.refs["u"].style.display="none";
-        
+        var obj ={
+            username:this.state.username,
+            score:this.state.userScore
+        }
+
+        this.socket = mySocket("https://bloomgame.herokuapp.com/");    
+        this.socket.on("submitscore", (data)=>{
+            console.log(data);
+            alert(this.state.username+ ", your score is: "+this.state.userScore + data);
+        });
     }
     
     render() {
