@@ -108,7 +108,7 @@ class Game extends Component {
             score:this.state.userScore
         }
 
-        this.socket.emit("submitscore", data); 
+        this.socket.emit("submitscore", obj); 
         alert(this.state.username+ ", your score is: "+this.state.userScore);
     }
     
