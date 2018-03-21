@@ -29,6 +29,14 @@ class Game extends Component {
         this.endGame = this.endGame.bind(this);
       
     }
+    
+    componentDidMount(){
+        this.socket = mySocket("https://bloomgame.herokuapp.com/");
+
+        this.socket.on("result", (data)=>{
+            alert(data);
+        });
+    }
       
         
     joinChat(){
@@ -100,11 +108,8 @@ class Game extends Component {
             score:this.state.userScore
         }
 
-        this.socket = mySocket("https://bloomgame.herokuapp.com/");    
-        this.socket.on("submitscore", (data)=>{
-            console.log(data);
-            alert(this.state.username+ ", your score is: "+this.state.userScore + data);
-        });
+        this.socket.emit("submitscore", data); 
+        alert(this.state.username+ ", your score is: "+this.state.userScore);
     }
     
     render() {
