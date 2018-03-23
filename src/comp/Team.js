@@ -35,9 +35,9 @@ class Team extends Component {
           
                 <div className="teamMembers">
                     <div className="kaylie">
-    
+                      
                             <div className="kaylieCircle">
-                                KAYLIE SON
+                                <a href="http://me.kaylieson.com/">KAYLIE SON  </a>
 
                             </div>
 
@@ -53,9 +53,9 @@ class Team extends Component {
                     </div>    
 
                     <div className="sehee">
-
+                     
                             <div className="seheeCircle">
-                               SEHEE AHN
+                               <a href="http://seheeahn.ca/">  SEHEE AHN </a>
                             </div>
                
 
